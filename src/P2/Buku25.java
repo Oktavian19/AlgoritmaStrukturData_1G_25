@@ -38,5 +38,22 @@ public class Buku25 {
         harga = har;
     }
 
-    
+    int hitungHargaTotal(int jml) {
+        return jml * harga;
+    }
+
+    int hitungDiskon(int jml) {
+        double harTot = hitungHargaTotal(jml);
+        double diskon = 0;
+        if (harTot > 150000) {
+            diskon = 0.12 * harTot;
+        } else if (75000 < harTot && harTot < 150000) {
+            diskon = 0.05 * harTot;
+        }
+        return (int) diskon;
+    }
+
+    int hitungHargaBayar(int jml) {
+        return hitungHargaTotal(jml) - hitungDiskon(jml);
+    }
 }
