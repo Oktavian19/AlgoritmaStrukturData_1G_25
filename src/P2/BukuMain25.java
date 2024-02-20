@@ -17,5 +17,8 @@ public class BukuMain25 {
         Buku25 bk2 = new Buku25("Self Reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
         bk2.tampilInformasi();
+
+        Buku25 bukuOkta = new Buku25("Tutorial Object", "Oktavian Eka Ramadhan", 15, 2, 30000);
+        bukuOkta.tampilInformasi();
     }
 }
