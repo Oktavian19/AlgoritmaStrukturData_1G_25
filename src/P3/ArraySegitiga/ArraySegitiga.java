@@ -1,4 +1,4 @@
-package P3;
+package P3.ArraySegitiga;
 
 public class ArraySegitiga {
     public static void main(String[] args) {

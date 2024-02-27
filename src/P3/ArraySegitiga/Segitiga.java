@@ -1,4 +1,4 @@
-package P3;
+package P3.ArraySegitiga;
 
 public class Segitiga {
     public int alas;
