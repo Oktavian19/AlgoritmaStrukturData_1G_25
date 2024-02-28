@@ -29,5 +29,35 @@ public class InfoMhs {
             System.out.printf("Nama : %s\nNIM : %s\nJenis Kelamin : %s\nNilai IPK : %s\n\n",
                         data[i].nama, data[i].nim, data[i].JenKel, data[i].ipk);
         }
+
+        double[] ipkAll = new double[data.length];
+        for (int i = 0; i < ipkAll.length; i++) {
+            ipkAll[i] = data[i].ipk;
+        }
+
+        System.out.printf("Rata-rata IPK : %.2f\n", rerataIpk(ipkAll));
+        System.out.printf("Data Mahasiswa IPK tertinggi :\n");
+        System.out.printf("Nama : %s\nNIM : %s\nJenis Kelamin : %s\nNilai IPK : %s\n\n",
+                        data[IpkTertinggi(ipkAll)].nama, data[IpkTertinggi(ipkAll)].nim, data[IpkTertinggi(ipkAll)].JenKel, data[IpkTertinggi(data[0].ipk, data[1].ipk, data[2].ipk)].ipk);
+    }
+
+    static double rerataIpk(double... arr) {
+        double total=0;
+        for (int i = 0; i < arr.length; i++) {
+            total += arr[i];
+        }
+        return total/arr.length;
+    }
+    
+    static int IpkTertinggi(double... arr) {
+        double max = 0;
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+                index = i;
+            }
+        }
+        return index;
     }
 }
