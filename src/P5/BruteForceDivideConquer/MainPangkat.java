@@ -18,6 +18,35 @@ public class MainPangkat {
             png[i] = new Pangkat(Nilai, Pangkat);
         }
 
+        System.out.println("\nPilih metode:\n1.Brute Force\n2.Divide Conquer");
+        System.out.print("Masukkan angka: ");
+        int pil = sc.nextInt();
+
+        int hasil[] = new int[elemen];
+
+        switch (pil) {
+            case 1:
+                System.out.println("\nHASIL PANGKAT - BRUTE FORCE");
+                for (int i = 0; i < elemen; i++) {
+                    hasil[i] = png[i].pangkatBF(png[i].nilai, png[i].pangkat);
+                }
+                break;
+            case 2:
+                System.out.println("\nHASIL PANGKAT - DIVIDE AND CONQUER");
+                for (int i = 0; i < elemen; i++) {
+                    hasil[i] = png[i].pangkatDC(png[i].nilai, png[i].pangkat);
+                }
+                break;
+            default:
+                break;
+        }
+
+        for (int i = 0; i < elemen; i++) {
+            System.out.printf("Hasil dari %d pangkat %d adalah %d\n",
+                    png[i].nilai, png[i].pangkat, hasil[i]);
+        }
+
+        /*
         System.out.println("\nHASIL PANGKAT - BRUTE FORCE");
         for (int i = 0; i < elemen; i++) {
             System.out.printf("Hasil dari %d pangkat %d adalah %d\n", png[i].nilai, png[i].pangkat,
@@ -28,5 +57,6 @@ public class MainPangkat {
             System.out.printf("Hasil dari %d pangkat %d adalah %d\n", png[i].nilai, png[i].pangkat,
                     png[i].pangkatDC(png[i].nilai, png[i].pangkat));
         }
+        */
     }
 }
