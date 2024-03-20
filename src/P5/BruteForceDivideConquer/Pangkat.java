@@ -3,22 +3,27 @@ package P5.BruteForceDivideConquer;
 public class Pangkat {
     public int nilai, pangkat;
 
-    int pangkatBF(int a, int n) {
+    Pangkat(int nilai, int pangkat) {
+        this.nilai = nilai;
+        this.pangkat = pangkat;
+    }
+
+    int pangkatBF(int nilai, int pangkat) {
         int hasil = 1;
-        for (int i = 0; i < n; i++) {
-            hasil *= a;
+        for (int i = 0; i < pangkat; i++) {
+            hasil *= nilai;
         }
         return hasil;
     }
 
-    int pangkatDC(int a, int n) {
-        if (n == 1) {
-            return a;
+    int pangkatDC(int nilai, int pangkat) {
+        if (pangkat == 1) {
+            return nilai;
         } else {
-            if (n % 2 == 1) {
-                return (pangkatDC(a, n / 2) * pangkatDC(a, n / 2) * a);
+            if (pangkat % 2 == 1) {
+                return (pangkatDC(nilai, pangkat / 2) * pangkatDC(nilai, pangkat / 2) * nilai);
             } else {
-                return (pangkatDC(a, n / 2) * pangkatDC(a, n / 2));
+                return (pangkatDC(nilai, pangkat / 2) * pangkatDC(nilai, pangkat / 2));
             }
         }
     }
