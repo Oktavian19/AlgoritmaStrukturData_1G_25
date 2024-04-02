@@ -45,11 +45,19 @@ public class BukuMain24 {
 
         data.tampilData(cari, posisi);
 
-        System.out.print("Masukkan kode buku yang akan dicari : ");
+        /*System.out.print("Masukkan kode buku yang akan dicari : ");
         System.out.println("\nMencari data...");
 
         Buku24 dataBuku24 = data.FindBuku(cari);
-        dataBuku24.tampilDataBuku();
+        dataBuku24.tampilDataBuku();*/
+
+
+        System.out.println("\nMenggunakan Binary Search..");
+        posisi = data.findBinarySearch(cari, 0, jmlBuku - 1);
+        data.tampilPosisi(cari, posisi);
+        System.out.println("_______________________________________________\n");
+        data.tampilData(cari, posisi);
+        System.out.println("_______________________________________________");
 
     }
 }
