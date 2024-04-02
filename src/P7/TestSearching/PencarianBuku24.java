@@ -31,14 +31,7 @@ public class PencarianBuku24 {
     }
 
     Buku24 FindBuku(int cari) {
-        int result = -1;
-        for (int i = 0; i < listBk.length; i++) {
-            if (listBk[i].kodeBuku == cari) {
-                result = i;
-                break;
-            }
-        }
-        return listBk[result];
+        return listBk[findSeqSearch(cari)];
     }
 
     void tampilPosisi(int x, int pos) {
