@@ -30,6 +30,17 @@ public class PencarianBuku24 {
         return posisi;
     }
 
+    Buku24 FindBuku(int cari) {
+        int result = -1;
+        for (int i = 0; i < listBk.length; i++) {
+            if (listBk[i].kodeBuku == cari) {
+                result = i;
+                break;
+            }
+        }
+        return listBk[result];
+    }
+
     void tampilPosisi(int x, int pos) {
         if (pos != -1) {
             System.out.printf("\nData %d ditemukan pada indeks %d\n", x, pos);

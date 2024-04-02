@@ -45,5 +45,11 @@ public class BukuMain24 {
 
         data.tampilData(cari, posisi);
 
+        System.out.print("Masukkan kode buku yang akan dicari : ");
+        System.out.println("\nMencari data...");
+
+        Buku24 dataBuku24 = data.FindBuku(cari);
+        dataBuku24.tampilDataBuku();
+
     }
 }
