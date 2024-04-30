@@ -21,7 +21,17 @@ public class queue {
 
     void peek() {
         if (!isEmpty()) {
-            System.out.println("Elemen terdepan: " + data[front].norek + " " + data[front].nama + " " + data[front].alamat + " " + data[front].umur + " " + data[front].saldo);
+            System.out.println("Elemen terdepan: " + data[front].norek + " " + data[front].nama + " "
+                    + data[front].alamat + " " + data[front].umur + " " + data[front].saldo);
+        } else {
+            System.out.println("Queue masih kosong");
+        }
+    }
+
+    void peekRear() {
+        if (!isEmpty()) {
+            System.out.println("Elemen terdepan: " + data[rear].norek + " " + data[rear].nama + " " + data[rear].alamat
+                    + " " + data[rear].umur + " " + data[rear].saldo);
         } else {
             System.out.println("Queue masih kosong");
         }
@@ -33,10 +43,12 @@ public class queue {
         } else {
             int i = front;
             while (i != rear) {
-                System.out.print(data[i].norek + " " + data[i].nama + " " + data[i].alamat + " " + data[i].umur + " " + data[i].saldo);
+                System.out.print(data[i].norek + " " + data[i].nama + " " + data[i].alamat + " " + data[i].umur + " "
+                        + data[i].saldo);
                 i = (i + 1) % max;
             }
-            System.out.println(data[i].norek + " " + data[i].nama + " " + data[i].alamat + " " + data[i].umur + " " + data[i].saldo + " ");
+            System.out.println(data[i].norek + " " + data[i].nama + " " + data[i].alamat + " " + data[i].umur + " "
+                    + data[i].saldo + " ");
             System.out.println("Jumlah Elemen = " + size);
         }
     }
