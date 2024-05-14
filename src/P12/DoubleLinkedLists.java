@@ -72,7 +72,7 @@ public class DoubleLinkedLists {
 
     void print() {
         if (!isEmpty()) {
-            Node tmp =  head;
+            Node tmp = head;
             while (tmp != null) {
                 System.out.print(tmp.data + "\t");
                 tmp = tmp.next;
@@ -83,7 +83,7 @@ public class DoubleLinkedLists {
         }
     }
 
-    void removeFirst() throws Exception{
+    void removeFirst() throws Exception {
         if (isEmpty()) {
             throw new Exception("Linked List masih kosong, tidak dapat dihapus");
         } else if (size == 1) {
@@ -135,5 +135,34 @@ public class DoubleLinkedLists {
             }
             size--;
         }
+    }
+
+    int getFirst() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked List kosong");
+        }
+        return head.data;
+    }
+
+    int getLast() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked List kosong");
+        }
+        Node tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    int get(int index) throws Exception {
+        if (isEmpty() || index >= size) {
+            throw new Exception("Nilai indeks di luar batas");
+        }
+        Node tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
     }
 }
