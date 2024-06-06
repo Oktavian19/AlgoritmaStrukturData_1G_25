@@ -64,7 +64,7 @@ public class DoubleLinkedLists {
             if (current.prev == null) {
                 addFirst(item, jarak);
             } else {
-                Node24 newNode = new Node24(current.prev, item, jarak,current);
+                Node24 newNode = new Node24(current.prev, item, jarak, current);
                 current.prev.next = newNode;
                 current.prev = newNode;
             }
@@ -123,29 +123,22 @@ public class DoubleLinkedLists {
     }
 
     void remove(int index) throws Exception {
-        if (isEmpty() || index >= size) {
-            throw new Exception("Nilai indeks di luar batas");
-        } else if (index == 0) {
-            removeFirst();
-        } else {
-            Node24 current = head;
-            int i = 0;
-            while (i < index) {
-                current = current.next;
-                i++;
+        Node24 current = head;
+        while (current != null) {
+            if (current.data == index) {
+                if (current.prev != null) {
+                    current.prev.next = current.next;
+                } else {
+                    head = current.next;
+                }
+                if (current.next != null) {
+                    current.next.prev = current.prev;
+                }
+                break;
             }
-            if (current.next == null) {
-                current.prev.next = null;
-            } else if (current.prev == null) {
-                current = current.next;
-                current.prev = null;
-                head = current;
-            } else {
-                current.prev.next = current.next;
-                current.next.prev = current.prev;
-            }
-            size--;
+            current = current.next;
         }
+        size--;
     }
 
     int getFirst() throws Exception {
