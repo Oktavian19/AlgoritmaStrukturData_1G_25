@@ -32,6 +32,7 @@ public class GraphMain24 {
         System.out.println("Hasil setelah penghapusan edge");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
+        gdg.degree(1);
     }
 
     static void checkAdjacency(Graph24 check) throws Exception{
