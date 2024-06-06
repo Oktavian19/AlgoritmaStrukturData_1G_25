@@ -1,5 +1,7 @@
 package P15;
 
+import java.util.Scanner;
+
 public class GraphMain24 {
     public static void main(String[] args) throws Exception {
         Graph24 gedung = new Graph24(6);
@@ -13,5 +15,25 @@ public class GraphMain24 {
         gedung.printGraph();
         gedung.removeEdge(1, 3);
         gedung.printGraph();
+        checkAdjacency(gedung);
+        System.out.println("");
+        checkAdjacency(gedung);
+    }
+
+    static void checkAdjacency(Graph24 check) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan gedung asal : ");
+        int asal = sc.nextInt();
+        System.out.print("Masukkan gedung tujuan : ");
+        int tujuan = sc.nextInt();
+        if (check.checkAdjacency(asal, tujuan)) {
+            System.out.println(adjacencyMessage(asal, tujuan) + " bertetangga");
+        } else {
+            System.out.println(adjacencyMessage(asal, tujuan) + " tidak bertetangga");
+        }
+    }
+
+    static String adjacencyMessage(int asal, int tujuan) {
+        return "Gedung " + (char) ('A' + asal) + " dan " + "Gedung " + (char) ('A' + tujuan);
     }
 }
